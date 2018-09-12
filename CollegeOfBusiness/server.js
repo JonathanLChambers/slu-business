@@ -8,10 +8,14 @@ var chalk = require("chalk")
 *setting up the server and database
 */
 var app = express()
+var router = express.Router()
 app.use(bodyParser.json())
+app.use('/api', router)
 
-var distDir = __dirname + "/dist/";
+
+var distDir = __dirname + "/dist/CollegeOfBusiness";
 app.use(express.static(distDir));
+console.log(__dirname)
 
 var server = app.listen(8080, function () {
     var port = server.address().port
