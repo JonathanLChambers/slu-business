@@ -13,8 +13,8 @@ app.use(bodyParser.json())
 app.use('/api', router)
 
 
-var distDir = __dirname + "/dist/CollegeOfBusiness";
-app.use(express.static(distDir));
+var distDir = __dirname + "/dist/CollegeOfBusiness"
+app.use(express.static(distDir))
 console.log(__dirname)
 
 var server = app.listen(8080, function () {
@@ -27,7 +27,10 @@ var server = app.listen(8080, function () {
 *establing api routes
 */
 function handleError(res, reason, message, code) {
-    console.log("ERROR: " + reason);
-    res.status(code || 500).json({"error": message});
+    console.log("ERROR: " + reason)
+    res.status(code || 500).json({"error": message})
 }
 
+router.get('/test', function(req,res) {
+    res.status(200).json({string: "This is just to demonstrate using the api to retrieve json."})
+})
