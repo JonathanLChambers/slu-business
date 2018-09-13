@@ -1,6 +1,17 @@
-<div>
-  <mdb-navbar SideClass="navbar navbar-xl navbar-dark green darken-1 py-4" style= "background-color: #128f06;" >
-    <mdb-navbar-brand><a class="font-weight-bold" style="font-size: 30px; color: #fad222" href="">College of Business</a>
-    </mdb-navbar-brand>
-  </mdb-navbar>
-</div>
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green darken-1 py-4" [containerInside]="false">
+
+  <mdb-navbar-brand><a class="font-weight-bold" style="font-size: 30px; color:#fad222" href="#">College of Business</a></mdb-navbar-brand>
+
+  <links>
+
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <form class="form-inline waves-light" mdbWavesEffect>
+          <div class="md-form mt-0">
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Southeastern_Louisiana_Lions_logo.svg/800px-Southeastern_Louisiana_Lions_logo.svg.png" height="90" alt="">
+          </div>
+      </form>
+  </links>
+
+</mdb-navbar>
