@@ -18,6 +18,8 @@ import { BannerComponent } from './banner/banner.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { RouterModule, Routes, Router } from '@angular/router';
+import { MapComponent } from './map/map.component';
+import { EventsComponent } from './events/events.component';
 
 
 /* const routes: Routes = [
@@ -34,7 +36,9 @@ import { RouterModule, Routes, Router } from '@angular/router';
     RegisterComponent,
     HomeComponent,
     BannerComponent,
-    NavbarComponent
+    NavbarComponent,
+    MapComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
