@@ -7,6 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardService } from './auth-guard.service';
+import { MapComponent} from './map/map.component';
+import { EventsComponent} from './events/events.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'faculty', component: FacultyComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
   { path: '', component: HomeComponent },
+  { path: 'map', component: MapComponent },
+  { path: 'events', component: EventsComponent}
 ];
 
 @NgModule({
