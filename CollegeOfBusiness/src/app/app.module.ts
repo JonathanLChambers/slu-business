@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { FacultyComponent } from './faculty/faculty.component';
 import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
@@ -32,6 +33,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
     ProfileComponent,
     LoginComponent,
     RegisterComponent,
+    FacultyComponent,
     HomeComponent,
     BannerComponent,
     NavbarComponent

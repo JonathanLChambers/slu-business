@@ -38,4 +38,26 @@ userSchema.methods.generateJwt = function() {
   }, "sha512"); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };
 
+var facultySchema = new mongoose.Schema({
+  email: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  name: {
+    type: String,
+    required: true
+  },
+  bio: {
+    type: String,
+    required: false
+  },
+    schedule: {
+    type: String,
+    required: false
+  },
+
+});
+
 mongoose.model('User', userSchema);
+mongoose.model('Faculty', facultySchema);
