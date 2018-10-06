@@ -13,7 +13,7 @@ import { EventsComponent} from './events/events.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'faculty', component: FacultyComponent },
+  { path: 'faculty', component: FacultyComponent, canActivate: [AuthGuardService] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
   { path: '', component: HomeComponent },
   { path: 'map', component: MapComponent },
