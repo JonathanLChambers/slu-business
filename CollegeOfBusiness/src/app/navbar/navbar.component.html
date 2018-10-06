@@ -1,12 +1,12 @@
 <div>
-    <mdb-navbar SideClass="navbar navbar-expand-lg our-color py-4 fixed-bottom" style= "background-color: #169b0a;" [containerInside]="false" >
+    <!-- <mdb-navbar SideClass="navbar navbar-expand-lg our-color py-4 fixed-bottom" style= "background-color: #169b0a;" [containerInside]="false" > -->
       <!-- <mdb-navbar-brand><a class="font-weight-bold" style="font-size: 30px; color: #E9C225" href="">Links go down here!</a></mdb-navbar-brand> -->
-      <links>
-
+      <!-- <links> -->
+        
         <!-- Links -->
-        <ul class="navbar-nav mr-auto">
+        <ul class="nav our-color fixed-bottom py-4 mr-auto justify-content-center">
             <li class="nav-item" *ngIf="!auth.isLoggedIn()">
-                <a routerLink="/login" class="nav-link waves-light" mdbWavesEffect href="#">Sign in</a>
+                <a routerLink="/login" class="nav-link waves-light flex-center" mdbWavesEffect href="#">Sign in</a>
             </li>
             <li class="nav-item">
                 <a routerLink="/map" class="nav-link waves-light" mdbWavesEffect href="#">Map</a>
@@ -25,6 +25,6 @@
             </li>
         </ul>
         <!-- Links -->
-    </links>
-    </mdb-navbar>
+    <!-- </links> -->
+    <!-- </mdb-navbar> -->
   </div>

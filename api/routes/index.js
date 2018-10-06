@@ -8,6 +8,7 @@ var auth = jwt({
 
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
+var ctrlFaculty = require('../controllers/faculty');
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
