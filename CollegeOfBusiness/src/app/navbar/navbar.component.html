@@ -18,6 +18,9 @@
                 <a routerLink="/profile" class="nav-link waves-light" mdbWavesEffect href="#">{{ auth.getUserDetails()?.name }}</a>
             </li>
             <li class="nav-item" *ngIf="auth.isLoggedIn()">
+                <a routerLink="/faculty" class="nav-link waves-light" mdbWavesEffect href="#">Add Faculty</a>
+            </li>
+            <li class="nav-item" *ngIf="auth.isLoggedIn()">
                 <a (click)="auth.logout()" class="nav-link waves-light" mdbWavesEffect href="#">Logout</a>
             </li>
         </ul>
