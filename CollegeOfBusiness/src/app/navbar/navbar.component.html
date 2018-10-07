@@ -6,22 +6,22 @@
         <!-- Links -->
         <ul class="nav our-color fixed-bottom py-4 mr-auto justify-content-center">
             <li class="nav-item" *ngIf="!auth.isLoggedIn()">
-                <a routerLink="/login" class="nav-link waves-light flex-center" mdbWavesEffect href="#">Sign in</a>
+                <a routerLink="/login" class="nav-link waves-light flex-center font-weight-bold navbar-style" mdbWavesEffect href="#">Sign in</a>
             </li>
             <li class="nav-item">
-                <a routerLink="/map" class="nav-link waves-light" mdbWavesEffect href="#">Map</a>
+                <a routerLink="/map" class="nav-link waves-light font-weight-bold navbar-style" mdbWavesEffect href="#">Map</a>
             </li>
             <li class="nav-item">
-                <a routerLink="/events" class="nav-link waves-light" mdbWavesEffect href="#">Upcoming Events</a>
+                <a routerLink="/events" class="nav-link waves-light font-weight-bold navbar-style" mdbWavesEffect href="#">Upcoming Events</a>
             </li>
             <li class="nav-item" *ngIf="auth.isLoggedIn()">
-                <a routerLink="/profile" class="nav-link waves-light" mdbWavesEffect href="#">{{ auth.getUserDetails()?.name }}</a>
+                <a routerLink="/profile" class="nav-link waves-light font-weight-bold navbar-style" mdbWavesEffect href="#">{{ auth.getUserDetails()?.name }}</a>
             </li>
             <li class="nav-item" *ngIf="auth.isLoggedIn()">
-                <a routerLink="/faculty" class="nav-link waves-light" mdbWavesEffect href="#">Add Faculty</a>
+                <a routerLink="/faculty" class="nav-link waves-light font-weight-bold navbar-style" mdbWavesEffect href="#">Add Faculty</a>
             </li>
             <li class="nav-item" *ngIf="auth.isLoggedIn()">
-                <a (click)="auth.logout()" class="nav-link waves-light" mdbWavesEffect href="#">Logout</a>
+                <a (click)="auth.logout()" class="nav-link waves-light font-weight-bold navbar-style" mdbWavesEffect href="#">Logout</a>
             </li>
         </ul>
         <!-- Links -->
