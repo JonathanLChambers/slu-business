@@ -56,3 +56,39 @@ $our-color: #006633;
     left: 6%;
     top: 65%;
   }
+
+  .textBox-Login {
+    border-radius: 25px;
+    background: rgb(206, 206, 205);
+    opacity: .95;
+    padding: 20px; 
+    width: 500px;
+    height: 420px; 
+    position: fixed;
+    left: 10%;
+    top: 15%;
+  }
+
+  .textBox-Profile {
+    border-radius: 25px;
+    background: rgb(206, 206, 205);
+    opacity: .85;
+    padding: 20px; 
+    width: 500px;
+    height: 370px; 
+    position: fixed;
+    left: 10%;
+    top: 15%;
+  }
+
+  .textBox-Faculty {
+    border-radius: 25px;
+    background: rgb(206, 206, 205);
+    opacity: .95;
+    padding: 20px; 
+    width: 700px;
+    height: 530px; 
+    position: fixed;
+    left: 10%;
+    top: 15%;
+  }
