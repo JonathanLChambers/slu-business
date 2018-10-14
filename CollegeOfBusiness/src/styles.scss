@@ -8,3 +8,51 @@ $our-color: #006633;
     background-image:url('http://wtwarchitects.com/wp-content/uploads/2017/04/WTWslu08-1300x975.jpg');
     background-position:50% 80%;
   }
+
+.textBox-Home {
+  border-radius: 25px;
+  background: rgb(206, 206, 205);
+  opacity: .85;
+  padding: 20px; 
+  width: 500px;
+  height: 150px; 
+  position: fixed;
+  left: 15%;
+  top: 62%;
+}
+
+.textBox-E1 {
+    border-radius: 25px;
+    background: rgb(206, 206, 205);
+    opacity: .85;
+    padding: 20px; 
+    width: 1000px;
+    height: 150px; 
+    position: fixed;
+    left: 6%;
+    top: 15%;
+  }
+
+  .textBox-E2 {
+    border-radius: 25px;
+    background: rgb(206, 206, 205);
+    opacity: .85;
+    padding: 20px; 
+    width: 1000px;
+    height: 150px; 
+    position: fixed;
+    left: 6%;
+    top: 40%;
+  }
+
+  .textBox-E3 {
+    border-radius: 25px;
+    background: rgb(206, 206, 205);
+    opacity: .85;
+    padding: 20px; 
+    width: 1000px;
+    height: 150px; 
+    position: fixed;
+    left: 6%;
+    top: 65%;
+  }
