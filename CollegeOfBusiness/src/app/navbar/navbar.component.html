@@ -14,6 +14,9 @@
             <li class="nav-item">
                 <a routerLink="/events" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">Upcoming Events</a>
             </li>
+            <li class="nav-item">
+                <a routerLink="/showfaculty" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">Faculty</a>
+            </li>
             <li class="nav-item" *ngIf="auth.isLoggedIn()">
                 <a routerLink="/profile" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">{{ auth.getUserDetails()?.name }}</a>
             </li>

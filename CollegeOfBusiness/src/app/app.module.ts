@@ -21,6 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { MapComponent } from './map/map.component';
 import { EventsComponent } from './events/events.component';
+import { ShowFacultyComponent } from './showfaculty/showfaculty.component';
 
 
 /* const routes: Routes = [
@@ -40,7 +41,8 @@ import { EventsComponent } from './events/events.component';
     BannerComponent,
     NavbarComponent,
     MapComponent,
-    EventsComponent
+    EventsComponent,
+    ShowFacultyComponent
   ],
   imports: [
     BrowserModule,
