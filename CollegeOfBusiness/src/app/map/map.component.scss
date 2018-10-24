@@ -1,13 +1,25 @@
-//.map-style{
-    // display: grid;
-     //height: 100vh;
-     //padding-top: 200px;
-     //max-height: 100vh;
-    // max-width: 100%;
-    // margin: auto; 
+.map-style{
+
+   
+    //width:auto;
+   // background-color: powderblue;
+
+  height:75%; 
+  width: auto;
+  position: relative;
    
    //transform: translate(-50%, -50%);
    //  background-size: cover; 
    //  width:auto;
    // background-position:50% 80%;
- //}
+ }
+ path:hover{
+  stroke: #002868 !important;
+  stroke-width:2px;
+  stroke-linejoin: round;
+  fill: #002868 !important;
+  cursor: pointer;
+
+ }
+
+ 
