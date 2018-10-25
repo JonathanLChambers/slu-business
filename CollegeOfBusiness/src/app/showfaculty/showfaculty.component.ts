@@ -1,19 +1,38 @@
 import { Component } from '@angular/core';
-import { AuthenticationService, FacultyPayload } from '../authentication.service';
+import { AuthenticationService, FacultyPayload, AppService } from '../authentication.service';
 
 @Component({
-  templateUrl: './showfaculty.component.html'
+  templateUrl: './showfaculty.component.html',
+  providers: [AppService]
 })
 export class ShowFacultyComponent {
-  details: FacultyPayload;
+  details: any = []
+  faculty = {
+    name: '',
+    email: '',
+    bio: '',
+    schedule: ''
 
-  constructor(private auth: AuthenticationService) {}
-  
-  ngOnInit() {    
-    this.auth.profile().subscribe(faculty => {
-      this.details = faculty;
-    }, (err) => {
-      console.error(err);
-    });
   }
+
+  constructor(public appService : AppService) {}
+  
+  ngOnInit() {
+    this.ShowFacPage();
+  }
+  ShowFacPage() {
+    try {
+      this.appService.getFaculty()
+      .subscribe(resp => {
+        console.log(resp, "res");
+        this.details= resp
+
+      },
+      error => {
+        console.log(error, "error");
+    })
+  } catch (e) {
+    console.log(e);
+  }
+}
 }

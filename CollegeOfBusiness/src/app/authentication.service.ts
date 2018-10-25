@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
+import { FacultyComponent } from './faculty/faculty.component';
+import { ShowFacultyComponent } from './showfaculty/showfaculty.component';
+import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
+
 
 export interface UserDetails {
   _id: string;
@@ -29,6 +33,35 @@ export interface TokenPayload {
   password: string;
   name?: string;
 }
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+};
+
+@Injectable()
+export class AppService {
+  constructor(private http: HttpClient) { }
+  getFaculty() {
+    return this.http.get(`http://localhost:3000/api/faculty`);
+  }
+}
+
+
+
+
+@Injectable()
+export class CustomInterceptor implements HttpInterceptor {
+
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        if (!req.headers.has('Content-Type')) {
+            req = req.clone({ headers: req.headers.set('Content-Type', 'application/json') });
+        }
+
+        req = req.clone({ headers: req.headers.set('Accept', 'application/json') });
+        return next.handle(req);
+    }
+}
+
 
 @Injectable()
 export class AuthenticationService {
@@ -59,6 +92,9 @@ export class AuthenticationService {
       return null;
     }
   }
+
+
+
 
   public isLoggedIn(): boolean {
     const user = this.getUserDetails();
@@ -101,6 +137,7 @@ export class AuthenticationService {
   public profile(): Observable<any> {
     return this.request('get', 'profile');
   }
+
 
   public faculty(faculty: FacultyPayload): Observable<any> {
     return this.http.post(`http://localhost:3000/api/faculty`, faculty);
