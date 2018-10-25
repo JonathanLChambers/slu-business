@@ -12,11 +12,12 @@ var ctrlFaculty = require('../controllers/faculty');
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
+router.get('/faculty', ctrlFaculty.Getfaculty);
 
 
 // authentication
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
-router.post('/faculty', ctrlAuth.faculty);
+router.post('/faculty', ctrlFaculty.faculty);
 
 module.exports = router;

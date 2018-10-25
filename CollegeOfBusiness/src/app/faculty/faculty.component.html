@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-6">
       <h1>Add a new faculty member</h1>
-      <form (submit)="facultyr()">
+      <form (submit)="faculty()">
         <div class="form-group">
           <label for="name">Full name</label>
           <input type="text" class="form-control" name="name" placeholder="Enter the faculty members name" [(ngModel)]="credentials.name">
@@ -21,7 +21,7 @@
           <label for="email">Schedule</label>
           <input type="text" class="form-control" name="schedule" placeholder="Enter their schedule" [(ngModel)]="credentials.schedule">
         </div>
-        <button type="submit" class="btn btn-default">Add</button>
+        <button type="submit" class="btn btn-default" onclick="location.reload();">Add</button>
       </form>
     </div>
   </div>

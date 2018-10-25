@@ -22,4 +22,4 @@ var facultySchema = new mongoose.Schema({
   
   });
 
-  mongoose.model('Faculty', facultySchema);
+mongoose.model('Faculty', facultySchema);

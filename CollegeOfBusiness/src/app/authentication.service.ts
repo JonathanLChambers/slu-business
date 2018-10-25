@@ -12,6 +12,14 @@ export interface UserDetails {
   iat: number;
 }
 
+export interface FacultyPayload {
+  name: string;
+  email: string;
+  bio: string;
+  schedule: string;
+}
+
+
 interface TokenResponse {
   token: string;
 }
@@ -94,8 +102,8 @@ export class AuthenticationService {
     return this.request('get', 'profile');
   }
 
-  public faculty(user: TokenPayload): Observable<any> {
-    return this.request('post', 'faculty', user);
+  public faculty(faculty: FacultyPayload): Observable<any> {
+    return this.http.post(`http://localhost:3000/api/faculty`, faculty);
   }
 
   public logout(): void {

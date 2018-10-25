@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthenticationService, FacultyPayload } from '../authentication.service';
 
 @Component({
-  selector: 'app-showfaculty',
-  templateUrl: './showfaculty.component.html',
-  styleUrls: ['./showfaculty.component.scss']
+  templateUrl: './showfaculty.component.html'
 })
-export class ShowFacultyComponent implements OnInit {
+export class ShowFacultyComponent {
+  details: FacultyPayload;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private auth: AuthenticationService) {}
+  
+  ngOnInit() {    
+    this.auth.profile().subscribe(faculty => {
+      this.details = faculty;
+    }, (err) => {
+      console.error(err);
+    });
   }
-
 }
