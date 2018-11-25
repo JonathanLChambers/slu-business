@@ -3,7 +3,8 @@ import { AuthenticationService, FacultyPayload, AppService } from '../authentica
 
 @Component({
   templateUrl: './showfaculty.component.html',
-  providers: [AppService]
+  providers: [AppService],
+  styleUrls: ['./showfaculty.component.scss']
 })
 export class ShowFacultyComponent {
   details: any = []
