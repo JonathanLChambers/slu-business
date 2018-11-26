@@ -1,16 +1,25 @@
-<div class="container">
-
-  <!-- <div class= "textBox-ShowFacultyTitle"><h3>Faculty</h3></div>
-  <div class= "textBox-ShowFaculty1"><div><p>{{details[2]?.name}}<br>{{details[2]?.email}}<br>{{details[2]?.bio}}<br>{{details[2]?.schedule}}</p></div></div>
-  <div class= "textBox-ShowFaculty2"><div><p>{{details[3]?.name}}<br>{{details[3]?.email}}<br>{{details[3]?.bio}}<br>{{details[3]?.schedule}}</p></div></div>
-  <div class= "textBox-ShowFaculty3"><div><p>{{details[4]?.name}}<br>{{details[4]?.email}}<br>{{details[4]?.bio}}<br>{{details[4]?.schedule}}</p></div></div>
-  <div class= "textBox-ShowFaculty4"><div><p>{{details[5]?.name}}<br>{{details[5]?.email}}<br>{{details[5]?.bio}}<br>{{details[5]?.schedule}}</p></div></div> -->
-
-
-  <div class= "textBox-ShowFacultyTitle"><h3>Faculty</h3></div>
-  <div *ngFor="let faculty of details" class="textBox-ShowFaculty"><p>{{faculty?.name}}<br>{{faculty?.email}}<br>{{faculty?.bio}}<br>{{faculty?.schedule}}</p></div>
-    
+<div class="container-fluid justify-content-center">
+    <div class="row align-items-center">
+  <mdb-carousel [isControls]="true" [animation]="'slide'" [interval]="0">
+    <div *ngFor="let slide of carousel; let i=index">
+      <mdb-carousel-item>
+        
+          <div *ngFor="let faculty of carousel[i]" class="col-sm">
+            <mdb-card>
+              <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap"></mdb-card-img>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4>{{faculty?.name}}</h4>
+                </mdb-card-title>
+                <mdb-card-text>{{faculty?.email}}<br>{{faculty?.bio}}<br>{{faculty?.schedule}}</mdb-card-text>
+              </mdb-card-body>
+            </mdb-card>
+          </div>
+         
+      </mdb-carousel-item>
+    </div>  
+  </mdb-carousel>
+</div>
 </div>
 
-
-
+  
