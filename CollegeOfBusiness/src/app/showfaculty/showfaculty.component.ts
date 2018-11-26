@@ -29,6 +29,7 @@ export class ShowFacultyComponent {
       .subscribe(resp => {
         console.log(resp, "res");
         this.details= resp
+        this.sortAlphabetical();
         this.sortCarousel();
       },
       error => {
@@ -56,5 +57,12 @@ sortCarousel(){
       this.carousel.push([this.details[i], this.details[i+1]])
     }
   }
+}
+sortAlphabetical(){
+  this.details.sort(function(a, b) {
+    var textA = a.name.toUpperCase();
+    var textB = b.name.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
 }
 }
