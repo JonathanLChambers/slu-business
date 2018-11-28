@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { MapComponent } from './map/map.component';
 import { EventsComponent } from './events/events.component';
 import { ShowFacultyComponent } from './showfaculty/showfaculty.component';
+import { EditfacultyComponent } from './editfaculty/editfaculty.component';
 
 
 /* const routes: Routes = [
@@ -42,12 +43,14 @@ import { ShowFacultyComponent } from './showfaculty/showfaculty.component';
     NavbarComponent,
     MapComponent,
     EventsComponent,
-    ShowFacultyComponent
+    ShowFacultyComponent,
+    EditfacultyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],

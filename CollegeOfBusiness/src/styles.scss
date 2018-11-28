@@ -8,7 +8,9 @@ $our-color: #006633;
     background-image:url('http://wtwarchitects.com/wp-content/uploads/2017/04/WTWslu08-1300x975.jpg');
     background-position:50% 80%;
   }
-
+body{
+  overflow: hidden;
+}
 .textBox-Home {
   border-radius: 25px;
   background: rgb(206, 206, 205);

@@ -17,10 +17,11 @@ export interface UserDetails {
 }
 
 export interface FacultyPayload {
-  name: string;
-  email: string;
-  bio: string;
-  schedule: string;
+  firstName: '',
+  lastName: '',
+  email: '',
+  bio: '',
+  schedule: string[]
 }
 
 
@@ -41,9 +42,7 @@ const httpOptions = {
 @Injectable()
 export class AppService {
   constructor(private http: HttpClient) { }
-  getFaculty() {
-    return this.http.get(`http://localhost:3000/api/faculty`);
-  }
+  
 }
 
 
@@ -138,11 +137,21 @@ export class AuthenticationService {
     return this.request('get', 'profile');
   }
 
-
+  public getFaculty() {
+    return this.http.get(`http://localhost:3000/api/faculty`);
+  }
   public faculty(faculty: FacultyPayload): Observable<any> {
     return this.http.post(`http://localhost:3000/api/faculty`, faculty);
   }
-
+  public facultyByEmail(email: string): Observable<any> {
+    return this.http.get(`http://localhost:3000/api/faculty/` + email);
+  }
+  public editFaculty(email: string, faculty: FacultyPayload): Observable<any> {
+    return this.http.put(`http://localhost:3000/api/faculty/` + email, faculty);
+  }
+  public deleteFaculty(email: string): Observable<any> {
+    return this.http.delete(`http://localhost:3000/api/faculty/` + email);
+  }
   public logout(): void {
     this.token = '';
     window.localStorage.removeItem('mean-token');

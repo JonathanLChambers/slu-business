@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService, FacultyPayload, AppService } from '../authentication.service';
 import { Router } from '@angular/router';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -8,28 +9,39 @@ import { Router } from '@angular/router';
   providers: [AppService]
 })
 export class FacultyComponent {
-  
+  vf: FormGroup;
+
  credentials: FacultyPayload = {
-    email: '',
-    name: '',
-    bio: '',
-    schedule: ''
+  firstName: '',
+  lastName: '',
+  email: '',
+  bio: '',
+  schedule: []
 
     
   };
   details: any = []
   facultyz = {
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     bio: '',
-    schedule: ''
+    schedule: []
 
   }
 
   
 
-  constructor(private auth: AuthenticationService, private router: Router,public appService : AppService) {}
-
+  constructor(private auth: AuthenticationService, private router: Router, private fb: FormBuilder) {
+    this.vf = fb.group({
+      emailFormEx: [this.credentials.email, [Validators.required, Validators.email]],
+      bioFormEx: [this.credentials.bio],
+      firstNameFormEx: [this.credentials.firstName],
+      lastNameFormEx: [this.credentials.lastName],
+      scheduleFormEx: [this.credentials.schedule]
+    });
+  }
+    
   faculty() {
     this.auth.faculty(this.credentials).subscribe(() => {
       this.router.navigateByUrl('/faculty');
@@ -40,23 +52,23 @@ export class FacultyComponent {
 
 
   ngOnInit() {
-    this.ShowFacPage();
+    // this.ShowFacPage();
     
   }
-  ShowFacPage() {
-    try {
-      this.appService.getFaculty()
-      .subscribe(resp => {
-        console.log(resp, "res");
-        this.details= resp
-      },
-      error => {
-        console.log(error, "error");
-    })
-  } catch (e) {
-    console.log(e);
-  }
-}
+//   ShowFacPage() {
+//     try {
+//       this.appService.getFaculty()
+//       .subscribe(resp => {
+//         console.log(resp, "res");
+//         this.details= resp
+//       },
+//       error => {
+//         console.log(error, "error");
+//     })
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
 
 
 }

@@ -15,13 +15,13 @@
                 <a routerLink="/events" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">Upcoming Events</a>
             </li>
             <li class="nav-item">
-                <a routerLink="/showfaculty" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">Faculty</a>
+                <a routerLink="/faculty" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">Faculty</a>
             </li>
-            <li class="nav-item" *ngIf="auth.isLoggedIn()">
+            <!-- <li class="nav-item" *ngIf="auth.isLoggedIn()">
                 <a routerLink="/profile" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">{{ auth.getUserDetails()?.name }}</a>
-            </li>
+            </li> -->
             <li class="nav-item" *ngIf="auth.isLoggedIn()">
-                <a routerLink="/faculty" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">Add Faculty</a>
+                <a routerLink="/add-faculty" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">Add Faculty</a>
             </li>
             <li class="nav-item" *ngIf="auth.isLoggedIn()">
                 <a (click)="auth.logout()" class="nav-link waves-light font-weight-bold navbar-style" style="font-size: 22px" mdbWavesEffect href="#">Logout</a>

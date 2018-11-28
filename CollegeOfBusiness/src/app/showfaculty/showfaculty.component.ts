@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService, FacultyPayload, AppService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './showfaculty.component.html',
@@ -7,17 +8,19 @@ import { AuthenticationService, FacultyPayload, AppService } from '../authentica
   styleUrls: ['./showfaculty.component.scss']
 })
 export class ShowFacultyComponent {
+  test: 'test'
   details: any = []
   carousel: any = []
   faculty = {
-    name: '',
-    email: '',
-    bio: '',
-    schedule: ''
+    firstName: '',
+  lastName: '',
+  email: '',
+  bio: '',
+  schedule: []
 
   }
 
-  constructor(public appService : AppService) {}
+  constructor(public appService : AppService, public auth: AuthenticationService, private router: Router) {}
   
   ngOnInit() {
     this.ShowFacPage();
@@ -25,7 +28,7 @@ export class ShowFacultyComponent {
   }
   ShowFacPage() {
     try {
-      this.appService.getFaculty()
+      this.auth.getFaculty()
       .subscribe(resp => {
         console.log(resp, "res");
         this.details= resp
@@ -52,17 +55,35 @@ sortCarousel(){
   switch(this.details.length - last){
     case 1: {
       this.carousel.push([this.details[i]])
+      break;
     }
     case 2: {
       this.carousel.push([this.details[i], this.details[i+1]])
+      break;
     }
   }
 }
 sortAlphabetical(){
   this.details.sort(function(a, b) {
-    var textA = a.name.toUpperCase();
-    var textB = b.name.toUpperCase();
+    var textA = a.lastName.toUpperCase();
+    var textB = b.lastName.toUpperCase();
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   });
+}
+edit(faculty: FacultyPayload): void{
+  localStorage.removeItem("editFacultyId");
+  localStorage.setItem("editFacultyId", faculty.email);
+  this.router.navigateByUrl('/edit-faculty');
+}
+delete(faculty: FacultyPayload): void{
+  this.auth.deleteFaculty(faculty.email)
+      .subscribe(resp => {
+        console.log("deleted")
+        this.ShowFacPage();
+      },
+      error => {
+        console.log(error, "error");
+    })
+  
 }
 }

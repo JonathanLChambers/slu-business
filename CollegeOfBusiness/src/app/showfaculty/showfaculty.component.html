@@ -1,23 +1,49 @@
-<div class="container-fluid">
-  <mdb-carousel [isControls]="true" [animation]="'slide'" [interval]="0" class="middle">
+<div class="container-fluid h-100">
+  <mdb-carousel [isControls]="true" [animation]="'slide'" [interval]="0" class="d-flex h-100 justify-content-center align-items-center">
     <div *ngFor="let slide of carousel; let i=index">
       <mdb-carousel-item>
-        <div class="row">
+        <div class="row px-3">
           <div *ngFor="let faculty of carousel[i]" class="col-sm">
             <mdb-card>
-              <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap"></mdb-card-img>
+                <mdb-card-img src="https://thumbs.dreamstime.com/z/party-person-celebrating-isolated-white-16214996.jpg" alt="Card image cap"></mdb-card-img>
               <mdb-card-body>
-                <mdb-card-title>
-                  <h4>{{faculty?.name}}</h4>
-                </mdb-card-title>
-                <mdb-card-text>{{faculty?.email}}<br>{{faculty?.bio}}<br>{{faculty?.schedule}}</mdb-card-text>
+                    <mdb-card-title>
+                      <h4>{{faculty?.firstName}} {{faculty?.lastName}}</h4>
+                    </mdb-card-title>
+                    <mdb-card-text>
+                      <div class="h5">{{faculty?.email}}</div>
+                      <!-- <div *ngFor="let day of faculty.schedule; let i=index" class="row  our-color">
+                        <div [ngSwitch]="i">
+                          <div class="h6 col-12 pr-1" *ngSwitchCase="0">Monday: </div>
+                          <div class="h6 col-12 pr-1" *ngSwitchCase="1">Tuesday: </div>
+                          <div class="h6 col-12 pr-1" *ngSwitchCase="2">Wednesday: </div>
+                          <div class="h6 col-12 pr-1" *ngSwitchCase="3">Thursday: </div>
+                          <div class="h6 col-12 pr-1" *ngSwitchCase="4">Friday: </div>
+                          <div *ngSwitchDefault></div>
+                        </div>
+                        <div class="col-6 pl-0">
+                          {{day}}
+                        </div>
+                      </div> -->
+                    </mdb-card-text>
+                  
+                <mdb-card-text>   
+                  <div class="d-flex row">
+                    {{faculty?.bio}}
+                  </div>
+                </mdb-card-text>
+                <div *ngIf="auth.isLoggedIn()" class="d-flex align-items-end justify-content-center">
+                  <button mdbBtn color="warning" type="button" mdbWavesEffect (click)="edit(faculty)">Edit</button>
+                </div>
+                <div *ngIf="auth.isLoggedIn()" class="d-flex align-items-end justify-content-center">
+                  <button mdbBtn color="danger" type="button" mdbWavesEffect (click)="delete(faculty)">Delete</button>
+                </div>
               </mdb-card-body>
+              
             </mdb-card>
           </div>
         </div>
       </mdb-carousel-item>
-    </div>  
+    </div>
   </mdb-carousel>
 </div>
-
-  
