@@ -14,6 +14,8 @@ var ctrlFaculty = require('../controllers/faculty');
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
 router.get('/faculty', ctrlFaculty.Getfaculty);
+router.delete('/faculty/:id/delete', ctrlFaculty.Delfaculty);
+router.put('/faculty/:id/update', ctrlFaculty.Upfaculty);
 
 
 // authentication

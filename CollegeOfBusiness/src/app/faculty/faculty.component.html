@@ -27,32 +27,32 @@
     </div>
   </div>
   </div>
+
   <div class= textBox-Faculty2>
       <div class="row">
           <div class="col-md-6">
-            <h1>Edit exist faculty member</h1>
-            <select>
-                <option value="Professor1">Professor1</option>
-                <option value="Professor2">Professor2</option>
-                <option value="etc">etc...</option>
+            <h1>Edit existing faculty member</h1>
+            <select id="selectbox">
+                <option *ngFor="let element of details">{{element.name}}</option>
               </select>
+              
               <br><br>
             <form (submit)="faculty()">
               <div class="form-group">
                 <label for="name">Full name</label>
-                <input type="text" class="form-control" name="name" placeholder="Enter the faculty members name" [(ngModel)]="credentials.name">
+                <input type="text" class="form-control" name="name">
               </div>
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" name="email" placeholder="Enter their email" [(ngModel)]="credentials.email">
+                <input type="email" class="form-control" name="email">
               </div>
               <div class="form-group">
                 <label for="email">Biography</label>
-                <input type="text" class="form-control" name="bio" placeholder="Enter their biography" [(ngModel)]="credentials.bio">
+                <input type="text" class="form-control" name="bio" >
               </div>
               <div class="form-group">
                 <label for="email">Schedule</label>
-                <input type="text" class="form-control" name="schedule" placeholder="Enter their schedule" [(ngModel)]="credentials.schedule">
+                <input type="text" class="form-control" name="schedule">
               </div>
               <button type="submit" class="btn btn-default" onclick="location.reload();">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-default" onclick="location.reload();">Delete</button>
             </form>

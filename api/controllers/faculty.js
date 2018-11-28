@@ -24,3 +24,17 @@ module.exports.faculty = function(req, res) {
     res.json(faculty);
   });
 };
+
+
+module.exports.Delfaculty = function (req, res) {
+  Faculty.findByIdAndRemove(req.params.id, function (err) {
+      res.status(200).send(Faculty);
+  })
+};
+
+module.exports.Upfaculty = function (req, res) {
+  Faculty.findByIdAndUpdate(req.params.id, function (err) {
+      res.status(200).send(Faculty);
+  })
+};
+
