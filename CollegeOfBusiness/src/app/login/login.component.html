@@ -3,7 +3,7 @@
     <div class="col-md-6">
       <mdb-card>
           <mdb-card-body>
-            <form [formGroup]="vf" (submit)="login()" class="p-3">
+            <form [formGroup]="vf" (submit)="auth.login(credentials)" class="p-3">
               <p class="h4 mb-4 w-100 text-center">Sign in</p>
               <div class="md-form">
                 <i class="fa fa-envelope prefix"></i>

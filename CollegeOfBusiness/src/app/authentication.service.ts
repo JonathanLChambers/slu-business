@@ -129,8 +129,12 @@ export class AuthenticationService {
     return this.request('post', 'register', user);
   }
 
-  public login(user: TokenPayload): Observable<any> {
-    return this.request('post', 'login', user);
+  public login(user: TokenPayload) {
+    this.request('post', 'login', user).subscribe(() => {
+      this.router.navigateByUrl('/');
+    }, (err) => {
+      console.error(err);
+    }); ;
   }
 
   public profile(): Observable<any> {

@@ -21,11 +21,11 @@ export class LoginComponent {
   
   }
 
-  login() {
-    this.auth.login(this.credentials).subscribe(() => {
-      this.router.navigateByUrl('/add-faculty');
-    }, (err) => {
-      console.error(err);
-    }); 
-  }
+  // login() {
+  //   this.auth.login(this.credentials).subscribe(() => {
+  //     this.router.navigateByUrl('/add-faculty');
+  //   }, (err) => {
+  //     console.error(err);
+  //   }); 
+  // }
 }

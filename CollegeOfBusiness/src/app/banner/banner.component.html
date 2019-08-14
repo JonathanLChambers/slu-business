@@ -1,8 +1,10 @@
 
 <mdb-navbar SideClass="navbar navbar-expand-lg our-color py-4 fixed-top" [containerInside]="false">
 
-  <mdb-navbar-brand><a routerLink="/login" class="font-weight-bold" style="font-size: 30px; color:#E9C225" href="#">College of Business</a></mdb-navbar-brand>
+    <mdb-navbar-brand ><a *ngIf="!auth.isLoggedIn()" routerLink="/login" class="font-weight-bold" style="font-size: 30px; color:#E9C225" href="#">College of Business</a> <a *ngIf="auth.isLoggedIn()"routerLink="/" class="font-weight-bold" style="font-size: 30px; color:#E9C225" href="#">College of Business</a>
+    </mdb-navbar-brand>
 
+   
   <links>
 
       <ul class="navbar-nav mr-auto">
